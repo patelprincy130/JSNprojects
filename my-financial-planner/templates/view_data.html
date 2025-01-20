@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Financial Data</title>
+</head>
+<body>
+    <h1>View Financial Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Income</th>
+                <th>Expenses</th>
+                <th>Savings</th>
+                <th>Remaining Income</th>
+                <th>Advice</th>
+                <th>Tips</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in user_data %}
+            <tr>
+                <td>{{ data.income }}</td>
+                <td>{{ data.expenses }}</td>
+                <td>{{ data.savings }}</td>
+                <td>{{ data.remaining_income }}</td>
+                <td>{{ data.advice }}</td>
+                <td>{{ data.tips }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6">No data available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
